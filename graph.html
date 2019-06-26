@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.link {
+  fill: none;
+  stroke : burlywood;
+  stroke-width: px;
+}
+
+#target {
+  fill: green;
+}
+
+.link.target {
+  stroke: green;
+}
+
+.link.target{
+  stroke-dasharray: 0,2 1;
+}
+
+circle { 
+  fill: yellowgreen;
+  stroke: blueviolet;
+  stroke-width: 3px;
+  fill-opacity:"0.5";
+  stroke-opacity:"0.8"
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-shadow: 0 1px 0 black, 1px 0 0 whitesmoke, 0 -1px 0 whitesmoke, -1px 0 0 whitesmoke;
+}
+
+</style>
+<body>
+  
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+
+// http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
+
+var links =   [
+        {
+            "source": "172.24.239.255",
+            "target": "172.24.237.26"
+        },
+        {
+            "source": "172.24.239.255",
+            "target": "172.24.239.41"
+        },
+        {
+            "source": "172.24.239.255",
+            "target": "172.24.239.106"
+        },
+        {
+            "source": "172.24.239.255",
+            "target": "172.24.237.85"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.63"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.123"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.46"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.214"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.65"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.61"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.212"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.20"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.87"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.13"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.65"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.252"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.5"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.157"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.70"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.143"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.224"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.85"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.89"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.239.216"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.134"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.42"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.24"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.236.222"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.73"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.61"
+        },
+        {
+            "source": "224.0.0.251",
+            "target": "172.24.237.27"
+        },
+        {
+            "source": "255.255.255.255",
+            "target": "172.24.239.41"
+        },
+        {
+            "source": "255.255.255.255",
+            "target": "172.24.143.122"
+        },
+        {
+            "source": "255.255.255.255",
+            "target": "172.24.237.85"
+        },
+        {
+            "source": "172.24.238.192",
+            "target": "217.182.199.184"
+        },
+        {
+            "source": "172.24.238.192",
+            "target": "144.2.1.1"
+        },
+        {
+            "source": "172.24.238.192",
+            "target": "152.195.38.32"
+        },
+        {
+            "source": "224.0.0.252",
+            "target": "172.24.237.85"
+        }
+    ];    
+var nodes = {};
+
+// Compute the distinct nodes from the links.
+links.forEach(function(link) {
+  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+});
+
+var width = 800,
+    height = 700;
+
+var force = d3.layout.force()
+    .nodes(d3.values(nodes))
+    .links(links)
+    .size([width, height])
+    .linkDistance(60)
+    .charge(-300)
+    .on("tick", tick)
+    .start();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Per-type markers, as they don't inherit styles.
+svg.append("defs").selectAll("marker")
+    .data(["target"])
+  .enter().append("marker")
+    .attr("id", function(d) { return d; })
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", -1.5)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+var path = svg.append("g").selectAll("path")
+    .data(force.links())
+  .enter().append("path")
+    .attr("class", function(d) { return "link " + d.type; })
+    .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+
+var circle = svg.append("g").selectAll("circle")
+    .data(force.nodes())
+  .enter().append("circle")
+    .attr("r", 6)
+    .call(force.drag);
+
+var text = svg.append("g").selectAll("text")
+    .data(force.nodes())
+  .enter().append("text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .text(function(d) { return d.name; });
+
+// Use elliptical arc path segments to doubly-encode directionality.
+function tick() {
+  path.attr("d", linkArc);
+  circle.attr("transform", transform);
+  text.attr("transform", transform);
+}
+
+function linkArc(d) {
+  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr = Math.sqrt(dx * dx + dy * dy);
+  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+}
+
+function transform(d) {
+  return "translate(" + d.x + "," + d.y + ")";
+}
+
+</script>
