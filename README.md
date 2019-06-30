@@ -13,13 +13,13 @@ $$ To gathered Information/ Sniffing Over the all Sniffing point
    gcc <filetype.c> -lpcap
 
 To Run The Python file
-1.python2 packsniff.py >tst.csv
-2.python3 bipartitegraph.py
+1.python3 packsniff.py
+2.python3 bipartitegraph.py (If You Want the PNG image of Bipartite Graph otherwise don't run it.)
 
 Then With the json data Run The html file
-1.Simply click on the html file
-N.B:-Right Now json is not updating automatically so Copy the links from graph.json file and paste it on links in html file..I Will try to do it automatic..
+1.Simply click on the html file [it's Fully Automatic graph plotting keep refreshing the page according to your requirement otherwise it will refresh the page after 5sec]
 
+N.B : According To your user data/ Network Traffic  set this to [1-infinte] (set here see this line at the packsniff.py code -> [if len(obj['links']) < 200]: and paste [any postive no at the place of 200]
 
 If You have any doubt and want to modify this just mail me..
 Thanks,
