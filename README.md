@@ -3,9 +3,9 @@ It Is sniffing the network and  saving the data into csv file..only source and d
 
 # How To Run
 Before Going To Run You Must have these in your system
-1.Python(Download Link :- https://www.python.org/downloads/)
-2.GCC Compiler (Download Link :- https://gcc.gnu.org/)
-3.pcap library (Download Linl :- https://www.winpcap.org/install/)
+- Python(Download Link :- https://www.python.org/downloads/)
+- GCC Compiler (Download Link :- https://gcc.gnu.org/)
+- pcap library (Download Linl :- https://www.winpcap.org/install/)
 
 # To gathered Information/ Sniffing Over the all Sniffing point 
 1.Just Run The Projecttool.c file
