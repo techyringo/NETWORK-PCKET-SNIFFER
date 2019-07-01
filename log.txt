@@ -1,0 +1,1422 @@
+
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 57180
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 12433
+|-Source IP  : 172.26.232.252
+|-Destination IP : 46.4.103.187
+
+TCP Header
+ |-Source Port 42412
+ |-Destination Port 443
+ |-Sequence Number 1056715922
+ |-Acknowledge Number : 2838648410
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 296
+ |-Checksum  : 47502
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 0034df5c              .4.\
+TCP Header
+ 400040063091ac1ae8fc2e0467bba5ac   @.@.0.......g...
+ 01bb3efc3492a932565a80100128b98e  ..>.4..2VZ€..(..
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 54273
+|-TTL    : 49
+|-Protocol : 6
+|-Checksum : 19180
+|-Source IP  : 46.4.103.187
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 42412
+ |-Sequence Number 2838648410
+ |-Acknowledge Number : 1056715923
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 260
+ |-Checksum  : 45768
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 0034d401              .4..
+TCP Header
+ 400031064aec2e0467bbac1ae8fc01bb   @.1.J...g.......
+ a5aca932565a3efc349380100104b2c8  ...2VZ>.4.€.....
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 54274
+|-TTL    : 49
+|-Protocol : 6
+|-Checksum : 19179
+|-Source IP  : 46.4.103.187
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 42412
+ |-Sequence Number 2838648409
+ |-Acknowledge Number : 1056715923
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 260
+ |-Checksum  : 45642
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 0034d402              .4..
+TCP Header
+ 400031064aeb2e0467bbac1ae8fc01bb   @.1.J...g.......
+ a5aca93256593efc349380100104b24a  ...2VY>.4.€....J
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 57181
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 12432
+|-Source IP  : 172.26.232.252
+|-Destination IP : 46.4.103.187
+
+TCP Header
+ |-Source Port 42412
+ |-Destination Port 443
+ |-Sequence Number 1056715923
+ |-Acknowledge Number : 2838648410
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 296
+ |-Checksum  : 35492
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 0034df5d              .4.]
+TCP Header
+ 400040063090ac1ae8fc2e0467bba5ac   @.@.0.......g...
+ 01bb3efc3493a932565a801001288aa4  ..>.4..2VZ€..(..
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 47659
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 64355
+|-Source IP  : 172.26.232.252
+|-Destination IP : 180.149.59.136
+
+TCP Header
+ |-Source Port 54480
+ |-Destination Port 80
+ |-Sequence Number 2638961097
+ |-Acknowledge Number : 1883990737
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 296
+ |-Checksum  : 30715
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 0034ba2b              .4.+
+TCP Header
+ 40004006fb63ac1ae8fcb4953b88d4d0   @.@..c......;...
+ 00509d4b59c9704b6ad18010012877fb  .P.KY.pKj.€..(w.
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 38051
+|-TTL    : 63
+|-Protocol : 6
+|-Checksum : 8684
+|-Source IP  : 180.149.59.136
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 80
+ |-Destination Port 54480
+ |-Sequence Number 1883990737
+ |-Acknowledge Number : 2638961098
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 6968
+ |-Checksum  : 63946
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 003494a3              .4..
+TCP Header
+ 40003f0621ecb4953b88ac1ae8fc0050   @.?.!...;......P
+ d4d0704b6ad19d4b59ca80101b38f9ca  ..pKj..KY.€..8..
+Data Payload
+
+##########################################################################################################
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 54 Bytes(Size of Packet)
+|-Identification 13654
+|-TTL    : 64
+|-Protocol : 17
+|-Checksum : 49832
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.31.1.130
+
+UDPHeader
+ |-Source Port 44336
+ |-Destination Port 53
+ |-Sequence Number 2228224
+ |-Checksum 11076
+IP Header	 d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 00363556              .65V
+UDP Header	 40004011c2a8ac1a          @.@.....
+Data Payload	 00222b44620001000001000000000000   ."+Db...........
+ 0464336a73036f72670000010001    .d3js.org.....
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 54 Bytes(Size of Packet)
+|-Identification 13655
+|-TTL    : 64
+|-Protocol : 17
+|-Checksum : 49831
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.31.1.130
+
+UDPHeader
+ |-Source Port 44336
+ |-Destination Port 53
+ |-Sequence Number 2228224
+ |-Checksum 18713
+IP Header	 d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 00363557              .65W
+UDP Header	 40004011c2a7ac1a          @.@.....
+Data Payload	 00224919441001000001000000000000   ."I.D...........
+ 0464336a73036f726700001c0001    .d3js.org.....
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 65 Bytes(Size of Packet)
+|-Identification 13656
+|-TTL    : 64
+|-Protocol : 17
+|-Checksum : 49819
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.31.1.130
+
+UDPHeader
+ |-Source Port 37260
+ |-Destination Port 53
+ |-Sequence Number 2949120
+ |-Checksum 31148
+IP Header	 d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 00413558              .A5X
+UDP Header	 40004011c29bac1a          @.@.....
+Data Payload	 002d79ac46af01000001000000000000   .-y.F...........
+ 04616a61780a676f6f676c6561706973   .ajax.googleapis
+ 03636f6d0000010001         .com.....
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 65 Bytes(Size of Packet)
+|-Identification 13657
+|-TTL    : 64
+|-Protocol : 17
+|-Checksum : 49818
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.31.1.130
+
+UDPHeader
+ |-Source Port 37260
+ |-Destination Port 53
+ |-Sequence Number 2949120
+ |-Checksum 49313
+IP Header	 d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 00413559              .A5Y
+UDP Header	 40004011c29aac1a          @.@.....
+Data Payload	 002dc0a1e4b901000001000000000000   .-..............
+ 04616a61780a676f6f676c6561706973   .ajax.googleapis
+ 03636f6d00001c0001         .com.....
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 114 Bytes(Size of Packet)
+|-Identification 48925
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 19746
+|-Source IP  : 172.26.232.252
+|-Destination IP : 104.25.49.22
+
+TCP Header
+ |-Source Port 35262
+ |-Destination Port 443
+ |-Sequence Number 1962660638
+ |-Acknowledge Number : 3059492005
+ |-Header Length : 5 DWORDS or 20 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 1
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 365
+ |-Checksum  : 12134
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 0072bf1d              .r..
+TCP Header
+ 400040064d22ac1ae8fc6819311689be   @.@.M"....h.1...
+ 01bb74fb              ..t.
+Data Payload
+ 1703030045653ed12000dd307add7c88   ....Ee>. ..0z.|.
+ ff0d31228405cdc7a801b82ffe84bc09   ..1"......./....
+ 47ce95c1b00defcff27d10bba2005adc   G........}....Z.
+ c175709a006ce9f6a1de65a460551dca   .up..l....e.`U..
+ 3034823b9725b7045212        04.;.%..R.
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 142 Bytes(Size of Packet)
+|-Identification 2242
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 20173
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.217.160.234
+
+TCP Header
+ |-Source Port 58928
+ |-Destination Port 443
+ |-Sequence Number 1870040743
+ |-Acknowledge Number : 2296972471
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 1
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 340
+ |-Checksum  : 7607
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 008e08c2              ....
+TCP Header
+ 400040064ecdac1ae8fcacd9a0eae630   @.@.N..........0
+ 01bb6f768ea788e904b7801801541db7  ..ov......€..T..
+Data Payload
+ 1703030055c66a5fb103976a3a9af0d7   ....U.j_...j:...
+ c3d35b9e4f798bf99b7a20ff005024db   ..[.Oy...z ..P$.
+ 09e46c789bb815b7a0beb64bf3172102   ..lx.......K..!.
+ 83c8a4dd1c4bc10d65351cd9b108a1ef   .....K..e5......
+ dbfb454613e9d405a6af23bb56c31904   ..EF......#.V...
+ d1dad113b5cd65930221        ......e..!
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 527 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 63
+|-Protocol : 17
+|-Checksum : 63269
+|-Source IP  : 172.31.1.130
+|-Destination IP : 172.26.232.252
+
+UDPHeader
+ |-Source Port 53
+ |-Destination Port 37260
+ |-Sequence Number 33226752
+ |-Checksum 48927
+IP Header	 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 020f0000              ....
+UDP Header	 40003f11f725ac1f          @.?..%..
+Data Payload	 01fbbf1f46af81800001000f00040006   ....F..€........
+ 04616a61780a676f6f676c6561706973   .ajax.googleapis
+ 03636f6d0000010001c00c0005000100   .com............
+ 0000d600160a676f6f676c6561706973   ......googleapis
+ 016c06676f6f676c65c01cc031000100   .l.google...1...
+ 01000000de0004d83ac46ac031000100   ........:.j.1...
+ 01000000de0004d83ac8aac031000100   ........:...1...
+ 01000000de0004acd91f0ac031000100   ............1...
+ 01000000de0004acd918eac031000100   ............1...
+ 01000000de0004d83ac4cac031000100   ........:...1...
+ 01000000de0004acd9a0eac031000100   ............1...
+ 01000000de0004acd9a10ac031000100   ............1...
+ 01000000de0004acd9a6cac031000100   ............1...
+ 01000000de0004acd9a6eac031000100   ............1...
+ 01000000de0004acd9a70ac031000100   ............1...
+ 01000000de0004acd9a72ac031000100   ..........*.1...
+ 01000000de0004acd9a60ac031000100   ............1...
+ 01000000de0004acd9a7cac031000100   ............1...
+ 01000000de0004acd9a7eac03e000200   ............>...
+ 0100052a840006036e7332c03ec03e00   ...*....ns2.>.>.
+ 02000100052a840006036e7331c03ec0   .....*....ns1.>.
+ 3e0002000100052a840006036e7333c0   >......*....ns3.
+ 3ec03e0002000100052a840006036e73   >.>......*....ns
+ 34c03ec16900010001000100e10004d8   4.>.i...........
+ ef260ac169001c0001000100e1001020   .&..i.......... 
+ 01486048020038000000000000000ac1   .H`H..8.........
+ 5700010001000100e10004d8ef240ac1   W............$..
+ 57001c0001000100e100102001486048   W.......... .H`H
+ 020036000000000000000ac145000100   ..6.........E...
+ 01000400240004d8ef200ac145001c00   ....$.... ..E...
+ 01000400240010200148604802003200   ....$.. .H`H..2.
+ 0000000000000a           .......
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 375 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 63
+|-Protocol : 17
+|-Checksum : 63421
+|-Source IP  : 172.31.1.130
+|-Destination IP : 172.26.232.252
+
+UDPHeader
+ |-Source Port 53
+ |-Destination Port 37260
+ |-Sequence Number 23265280
+ |-Checksum 53331
+IP Header	 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 01770000              .w..
+UDP Header	 40003f11f7bdac1f          @.?.....
+Data Payload	 0163d053e4b981800001000200040008   .c.S...€........
+ 04616a61780a676f6f676c6561706973   .ajax.googleapis
+ 03636f6d00001c0001c00c0005000100   .com............
+ 0000d600160a676f6f676c6561706973   ......googleapis
+ 016c06676f6f676c65c01cc031001c00   .l.google...1...
+ 01000000930010240468004002080a00   .......$.h.@....
+ 0000000000200ac03e0002000100052a   ..... ..>......*
+ 840006036e7334c03ec03e0002000100   ....ns4.>.>.....
+ 052a840006036e7332c03ec03e000200   .*....ns2.>.>...
+ 0100052a840006036e7331c03ec03e00   ...*....ns1.>.>.
+ 02000100052a840006036e7333c03ec0   .....*....ns3.>.
+ 6f00010001000100e10004d8ef260ac0   o............&..
+ 6f001c0001000100e100102001486048   o.......... .H`H
+ 020038000000000000000ac0a5000100   ..8.............
+ 01000100e10004d8ef240ac0a5001c00   .........$......
+ 01000100e10010200148604802003600   ....... .H`H..6.
+ 0000000000000ac09300010001000400   ................
+ 240004d8ef200ac093001c0001000400   $.... ..........
+ 24001020014860480200320000000000   $.. .H`H..2.....
+ 00000ac08100010001000100e10004d8   ................
+ ef220ac081001c0001000100e1001020   ."............. 
+ 01486048020034000000000000000a   .H`H..4........
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 60912
+|-TTL    : 122
+|-Protocol : 6
+|-Checksum : 28664
+|-Source IP  : 172.217.160.234
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 58928
+ |-Sequence Number 2296972471
+ |-Acknowledge Number : 1870040833
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 248
+ |-Checksum  : 37547
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 0034edf0              .4..
+TCP Header
+ 00007a066ff8acd9a0eaac1ae8fc01bb   ..z.o...........
+ e63088e904b76f768f01801000f892ab  .0....ov..€.....
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 138 Bytes(Size of Packet)
+|-Identification 60913
+|-TTL    : 122
+|-Protocol : 6
+|-Checksum : 28577
+|-Source IP  : 172.217.160.234
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 58928
+ |-Sequence Number 2296972471
+ |-Acknowledge Number : 1870040833
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 1
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 248
+ |-Checksum  : 57890
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 008aedf1              ....
+TCP Header
+ 00007a066fa1acd9a0eaac1ae8fc01bb   ..z.o...........
+ e63088e904b76f768f01801800f8e222  .0....ov..€...."
+Data Payload
+ 1703030051277135fca3014bfafc7bdc   ....Q'q5...K..{.
+ 445130b054dbf653b59ae930dee6f1ce   DQ0.T..S...0....
+ 37c3e59686871f7a38f25b635dd198e6   7......z8.[c]...
+ f7bbbd9f970199441d06744191217276   .......D..tA.!rv
+ 2091338ca2ce7d1286d77b36a09ef526    .3...}...{6...&
+ 4dbe9fa56d2f            M...m/
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 91 Bytes(Size of Packet)
+|-Identification 2243
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 20223
+|-Source IP  : 172.26.232.252
+|-Destination IP : 172.217.160.234
+
+TCP Header
+ |-Source Port 58928
+ |-Destination Port 443
+ |-Sequence Number 1870040833
+ |-Acknowledge Number : 2296972557
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 1
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 340
+ |-Checksum  : 34197
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 005b08c3              .[..
+TCP Header
+ 400040064effac1ae8fcacd9a0eae630   @.@.N..........0
+ 01bb6f768f0188e9050d801801548595  ..ov......€..T..
+Data Payload
+ 17030300229e1a61939dfb9be2e95895   ...."..a......X.
+ c497a98f1718e67244fc5e86b534412d   .......rD.^..4A-
+ 25da8fb4caeb64           %.....d
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 373 Bytes(Size of Packet)
+|-Identification 1881
+|-TTL    : 55
+|-Protocol : 6
+|-Checksum : 3300
+|-Source IP  : 104.25.49.22
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 35262
+ |-Sequence Number 3059492005
+ |-Acknowledge Number : 1962660712
+ |-Header Length : 5 DWORDS or 20 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 1
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 32
+ |-Checksum  : 34017
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 01750759              .u.Y
+TCP Header
+ 400037060ce468193116ac1ae8fc01bb   @.7...h.1.......
+ 89beb65c              ...\
+Data Payload
+ 170303014897567354381b03c58f33da   ....H.VsT8....3.
+ e0e6e3d405a7f9ee8ae687a10034f099   .............4..
+ 559c6e5a9392fadd92c2b98695df0a31   U.nZ...........1
+ 06e8c4f3fdecd5fab67da7222fa8c2db   .........}."/...
+ e3d550af04535525b8fa18d5a81eac27   ..P..SU%.......'
+ 6b94936ba6d7ba95150a452f7bf1e262   k..k......E/{..b
+ 7e01a8f3acb6a8ed8b9579643507b92b   ~.........yd5..+
+ a95194e4599569500d502dc58ad3a7be   .Q..Y.iP.P-.....
+ ab31c22b46057e3cf4159a4ecf45c030   .1.+F.~<...N.E.0
+ bce7d7f0cef757e13130bf934275caa7   ......W.10..Bu..
+ dcc8fc8efc0122a417ca903d25dd80cf   ......"....=%.€.
+ 826f8d5306de36b52b73745ec1ba3469   .o.S..6.+st^..4i
+ 2bd6b5110a9df541992c704025d03f0a   +......A.,p@%.?.
+ f7763bcb179a8f06f50447ee2c0c7127   .v;.......G.,.q'
+ d48dbe9f60e14f566ecf83a77b91d7e4   ....`.OVn...{...
+ 108658bf36117a24b684f50efd24777f   ..X.6.z$.....$w
+ f7db63a239947eed36cebaca382eb680   ..c.9.~.6...8..€
+ 7cbdb4258d578600e3b2b808329826fb   |..%.W......2.&.
+ 5e0c49ebdc260c7e1d148bc8a02acecb   ^.I..&.~.....*..
+ 28b7da0899a26f7b13c86d2a3b43f841   (.....o{..m*;C.A
+ a489468dc336132b0672df0e52     ..F..6.+.r..R
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : D8-24-BD-91-5D-40 
+|-Source Address      : 44-1C-A8-6B-69-6B 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 40 Bytes(Size of Packet)
+|-Identification 48926
+|-TTL    : 64
+|-Protocol : 6
+|-Checksum : 19819
+|-Source IP  : 172.26.232.252
+|-Destination IP : 104.25.49.22
+
+TCP Header
+ |-Source Port 35262
+ |-Destination Port 443
+ |-Sequence Number 1962660712
+ |-Acknowledge Number : 3059492338
+ |-Header Length : 5 DWORDS or 20 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 388
+ |-Checksum  : 53213
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ d824bd915d40441ca86b696b08004500   .$..]@D..kik..E.
+ 0028bf1e              .(..
+TCP Header
+ 400040064d6bac1ae8fc6819311689be   @.@.Mk....h.1...
+ 01bb74fb              ..t.
+Data Payload
+
+##########################################################################################################
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 60971
+|-TTL    : 122
+|-Protocol : 6
+|-Checksum : 28605
+|-Source IP  : 172.217.160.234
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 58928
+ |-Sequence Number 2296972557
+ |-Acknowledge Number : 1870040872
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 248
+ |-Checksum  : 37210
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 0034ee2b              .4.+
+TCP Header
+ 00007a066fbdacd9a0eaac1ae8fc01bb   ..z.o...........
+ e63088e9050d6f768f28801000f8915a  .0....ov.(€....Z
+Data Payload
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 204 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 63
+|-Protocol : 17
+|-Checksum : 63592
+|-Source IP  : 172.31.1.130
+|-Destination IP : 172.26.232.252
+
+UDPHeader
+ |-Source Port 53
+ |-Destination Port 44336
+ |-Sequence Number 12058624
+ |-Checksum 40354
+IP Header	 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 00cc0000              ....
+UDP Header	 40003f11f868ac1f          @.?..h..
+Data Payload	 00b89da2620081800001000200020003   ....b..€........
+ 0464336a73036f72670000010001c00c   .d3js.org.......
+ 000100010000012c000468193016c00c   .......,..h.0...
+ 000100010000012c000468193116c00c   .......,..h.1...
+ 000200010001398000180468616e7302   ......9€...hans.
+ 6e730a636c6f7564666c61726503636f   ns.cloudflare.co
+ 6d00c00c0002000100013980000a0763   m.........9€...c
+ 6f72746e6579c04bc06a000100010000   ortney.K.j......
+ 19ee0004adf53a57c046000100010000   ......:W.F......
+ fe760004adf53bafc046001c00010000   .v....;..F......
+ fe7600102400cb002049000100000000   .v..$... I......
+ adf53baf              ..;.
+
+##########################################################################################################
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 228 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 63
+|-Protocol : 17
+|-Checksum : 63568
+|-Source IP  : 172.31.1.130
+|-Destination IP : 172.26.232.252
+
+UDPHeader
+ |-Source Port 53
+ |-Destination Port 44336
+ |-Sequence Number 13631488
+ |-Checksum 40290
+IP Header	 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 00e40000              ....
+UDP Header	 40003f11f850ac1f          @.?..P..
+Data Payload	 00d09d62441081800001000200020003   ...bD..€........
+ 0464336a73036f726700001c0001c00c   .d3js.org.......
+ 001c00010000012c0010260647000020   .......,..&.G.. 
+ 00000000000068193016c00c001c0001   ......h.0.......
+ 0000012c001026064700002000000000   ...,..&.G.. ....
+ 000068193116c00c0002000100013980   ..h.1.........9€
+ 001b07636f72746e6579026e730a636c   ...cortney.ns.cl
+ 6f7564666c61726503636f6d00c00c00   oudflare.com....
+ 0200010001398000070468616e73c066   .....9€...hans.f
+ c05e00010001000019ee0004adf53a57   .^............:W
+ c085000100010000fe760004adf53baf   .........v....;.
+ c085001c00010000fe7600102400cb00   .........v..$...
+ 2049000100000000adf53baf       I........;.
+
+##########################################################################################################
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+.......................................UDP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 01-00-5E-00-00-FB 
+|-Source Address      : A8-86-DD-B4-31-D9 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 104 Bytes(Size of Packet)
+|-Identification 28214
+|-TTL    : 255
+|-Protocol : 17
+|-Checksum : 55340
+|-Source IP  : 172.26.232.11
+|-Destination IP : 224.0.0.251
+
+UDPHeader
+ |-Source Port 5353
+ |-Destination Port 5353
+ |-Sequence Number 5505024
+ |-Checksum 53842
+IP Header	 01005e0000fba886ddb431d908004500   ..^.......1...E.
+ 00686e36              .hn6
+UDP Header	 0000ff11d82cac1a          .....,..
+Data Payload	 0054d252000000000004000000000000   .T.R............
+ 085f616972706f7274045f746370056c   ._airport._tcp.l
+ 6f63616c00000c0001075f757363616e   ocal......_uscan
+ 73c015000c0001075f697070757362c0   s......._ippusb.
+ 15000c0001045f707470c015000c0001  ......_ptp......
+
+##########################################################################################################
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+*********************************************ICMP Packet***********************************************
+
+Ethernet Header
+|-Destination Address : 01-80-C2-00-00-00 
+|-Source Address      : CC-70-ED-8A-2F-88 
+|-Protocol           : 11776 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 2 DWORDS or 8 Bytes
+|-Type Of Service : 66
+|-IP Total Length : 768 Bytes(Size of Packet)
+|-Identification 0
+|-TTL    : 128
+|-Protocol : 1
+|-Checksum : 36
+|-Source IP  : 81.197.31.0
+|-Destination IP : 0.0.0.20
+
+ICMP Header 
+ | -Type 128 |-Code :1
+ |-Checksum : 36
+
+IP Header
+ 0180c2000000cc70          .€.....p
+UDP Header
+ ed8a2f88002e4242          ../...BB
+Data Payload
+ 000000148001cc70ed8a2f8080080500   ....€..p../€€...
+ 140002000f000000000000000000    ..............
+
+..................................................................................
+
+.......................................TCP Packet.................................... 
+
+Ethernet Header
+|-Destination Address : 44-1C-A8-6B-69-6B 
+|-Source Address      : D8-24-BD-91-5D-40 
+|-Protocol           : 8 
+
+IP Header
+|-IP Version   4
+|-IP Header Length : 5 DWORDS or 20 Bytes
+|-Type Of Service : 0
+|-IP Total Length : 52 Bytes(Size of Packet)
+|-Identification 54275
+|-TTL    : 49
+|-Protocol : 6
+|-Checksum : 19178
+|-Source IP  : 46.4.103.187
+|-Destination IP : 172.26.232.252
+
+TCP Header
+ |-Source Port 443
+ |-Destination Port 42412
+ |-Sequence Number 2838648409
+ |-Acknowledge Number : 1056715923
+ |-Header Length : 8 DWORDS or 32 BYTES
+ |-Urgent Flag  : 0
+ |-Acknowledgement Flag : 1
+ |-Push Flag    : 0
+ |-Reset Flag  : 0
+ |-Synchronise Flag : 0
+ |-Finish Flag  : 0
+ |-Window      : 260
+ |-Checksum  : 32842
+ |-Urgent Pointer : 0
+
+           DATA Dump                 
+IP Header
+ 441ca86b696bd824bd915d4008004500   D..kik.$..]@..E.
+ 0034d403              .4..
+TCP Header
+ 400031064aea2e0467bbac1ae8fc01bb   @.1.J...g.......
