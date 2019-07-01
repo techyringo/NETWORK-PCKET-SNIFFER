@@ -1,13 +1,20 @@
 # NETWORK-PACKET-SNIFFER
 It Is sniffing the network and  saving the data into csv file..only source and destination.After that i am plotting the bipartite graph between source and destination.and then i am plotting mobile patent suits graph using d3.js
 
-# How To Run
+#### How To Run
 Before Going To Run You Must have these in your system
 - Python(Download Link :- https://www.python.org/downloads/)
 - GCC Compiler (Download Link :- https://gcc.gnu.org/)
 - pcap library (Download Linl :- https://www.winpcap.org/install/)
 
-# To gathered Information/ Sniffing Over the all Sniffing point 
+ Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
+
+###### To gathered Information/ Sniffing Over the all Sniffing point 
 1.Just Run The Projecttool.c file
 1.1 DEMO-
    gcc <filetype.c> -lpcap
