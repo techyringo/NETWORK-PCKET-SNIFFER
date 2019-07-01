@@ -28,13 +28,13 @@ all_nodes = list(B.nodes())
 
 print(B.edges())
 
-nodes = [{'name': str(i)}
-            for i in B.nodes()]
-links = [{'source': u[0], 'target': u[1]}
-            for u in B.edges()]
-with open('graph.json', 'w') as f:
-    json.dump({'links': links}, f, indent=4,)
-pos=nx.spring_layout(pos),
+#nodes = [{'name': str(i)}
+#            for i in B.nodes()]
+#links = [{'source': u[0], 'target': u[1]}
+#            for u in B.edges()]
+#with open('graph.json', 'w') as f:
+#    json.dump({'links': links}, f, indent=4,)
+#pos=nx.spring_layout(pos),
 with_labels = True,
 plt.show()
 

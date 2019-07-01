@@ -1,7 +1,7 @@
 import socket, sys
 from struct import *
+import requests
 import time
-import json
 #Convert a string of 6 characters of ethernet address into a dash separated hex string
 def eth_addr (a) :
     b = "%.2x:%.2x:%.2x:%.2x:%.2x:%.2x" % (ord(a[0]) , ord(a[1]) , ord(a[2]), ord(a[3]), ord(a[4]) , ord(a[5]))
@@ -11,126 +11,112 @@ try:
 except socket.error:
     print('Socket could not be created. Error Code : ')
     sys.exit()
-print('"Source",'+  '"Destination",'+ '"Protocol"')
+print('"Source",'+  '"Destination",'+ '"Protocol",'+'"SourceMac",'+'"Destination Mac",'+'"Protocol"')
 # receive a packet
+while True:
+    packet = s.recvfrom(65565)
+    #packet string from tuple
+    packet = packet[0]
 
+    #parse ethernet header
+    eth_length = 14
 
-jsonFile = open('test.json','w')
-try:
-    obj = {'links' : []}
-    objHash = []
-    while True:
+    eth_header = packet[:eth_length]
+    eth = unpack('!6s6sH' , eth_header)
+    eth_protocol = socket.ntohs(eth[2])
+   #print (eth_addr(packet[0:6]) +  eth_addr(packet[6:12]) + str(eth_protocol))
+    
+    #Parse IP packets, IP Protocol number = 8
+    if eth_protocol == 8 :
+        #Parse IP header
+        #take first 20 characters for the ip header
+        ip_header = packet[eth_length:20+eth_length]
 
-        packet = s.recvfrom(65565)
-        #packet string from tuple
-        packet = packet[0]
+        #now unpack them :)
+        iph = unpack('!BBHHHBBH4s4s' , ip_header)
 
-        #parse ethernet header
-        eth_length = 14
+        version_ihl = iph[0]
+        version = version_ihl >> 4
+        ihl = version_ihl & 0xF
 
-        eth_header = packet[:eth_length]
-        eth = unpack('!6s6sH' , eth_header)
-        eth_protocol = socket.ntohs(eth[2])
-    #print (eth_addr(packet[0:6]) +  eth_addr(packet[6:12]) + str(eth_protocol))
+        iph_length = ihl * 4
+
+        ttl = iph[5]
+        protocol = iph[6]
+        s_addr = socket.inet_ntoa(iph[8])
+        d_addr = socket.inet_ntoa(iph[9])
         
-        #Parse IP packets, IP Protocol number = 8
-        if eth_protocol == 8 :
-            ip_header = packet[eth_length:20+eth_length]
+        #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'"') #+ 'Version : ' + str(version) + ' IP Header Length : ' + str(ihl) + ' TTL : ' + str(ttl) + ' Protocol : ' + str(protocol) +
+       # r = requests.post(url='http://localhost:8080/data',data = {'source' : str(s_addr), 'target': str(d_addr)})
+        #TCP protocol
+        if protocol == 6 :
+            t = iph_length + eth_length
+            tcp_header = packet[t:t+20]
 
-            iph = unpack('!BBHHHBBH4s4s' , ip_header)
+            #now unpack them :)
+            tcph = unpack('!HHLLBBHHH' , tcp_header)
 
-            version_ihl = iph[0]
-            version = version_ihl >> 4
-            ihl = version_ihl & 0xF
+            source_port = tcph[0]
+            dest_port = tcph[1]
+            sequence = tcph[2]
+            acknowledgement = tcph[3]
+            doff_reserved = tcph[4]
+            tcph_length = doff_reserved >> 4
 
-            iph_length = ihl * 4
+#print ('Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port)) #+ ' Sequence Number : ' + str(sequence) + ' Acknowledgement : ' + str(acknowledgement) + ' TCP header length : ' + str(tcph_length)
 
-            ttl = iph[5]
-            protocol = iph[6]
-            s_addr = socket.inet_ntoa(iph[8])
-            d_addr = socket.inet_ntoa(iph[9])
-            addHash = str(s_addr) + str(d_addr)
-            if addHash not in objHash:
-                objHash.append(addHash)
-                if len(obj['links']) < 200:
-                    print('here')
-                    obj['links'].append({'source' : str(s_addr),'target' : str(d_addr),'type': 'licensing'})
-                else:
-                    print('there')
-                    obj['links'].pop(0)
-                    jsonFile = open('test.json','w')
-                    json.dump(obj, jsonFile, ensure_ascii=True, indent=2)
-                    jsonFile.close()
+            h_size = eth_length + iph_length + tcph_length * 4
+            data_size = len(packet) - h_size
 
-            #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'"') #+ 'Version : ' + str(version) + ' IP Header Length : ' + str(ihl) + ' TTL : ' + str(ttl) + ' Protocol : ' + str(protocol) +
-            #TCP protocol
-            if protocol == 6 :
-                t = iph_length + eth_length
-                tcp_header = packet[t:t+20]
+            #get data from the packet
+            data = packet[h_size:]
 
-                #now unpack them :)
-                tcph = unpack('!HHLLBBHHH' , tcp_header)
+            #print 'Data : ' + data
 
-                source_port = tcph[0]
-                dest_port = tcph[1]
-                sequence = tcph[2]
-                acknowledgement = tcph[3]
-                doff_reserved = tcph[4]
-                tcph_length = doff_reserved >> 4
+        #ICMP Packets
+        elif protocol == 1 :
+            u = iph_length + eth_length
+            icmph_length = 4
+            icmp_header = packet[u:u+4]
 
+            #now unpack them :)
+            icmph = unpack('!BBH' , icmp_header)
 
-                h_size = eth_length + iph_length + tcph_length * 4
-                data_size = len(packet) - h_size
+            icmp_type = icmph[0]
+            code = icmph[1]
+            checksum = icmph[2]
 
-                #get data from the packet
-                data = packet[h_size:]
+          #  print 'Type : ' + str(icmp_type) + ' Code : ' + str(code) + ' Checksum : ' + str(checksum)
+            h_size = eth_length + iph_length + icmph_length
+            data_size = len(packet) - h_size
 
+            #get data from the packet
+            data = packet[h_size:]
 
-            #ICMP Packets
-            elif protocol == 1 :
-                u = iph_length + eth_length
-                icmph_length = 4
-                icmp_header = packet[u:u+4]
+            #print 'Data : ' + data
 
-                #now unpack them :)
-                icmph = unpack('!BBH' , icmp_header)
+        #UDP packets
+        elif protocol == 17 :
+            u = iph_length + eth_length
+            udph_length = 8
+            udp_header = packet[u:u+8]
 
-                icmp_type = icmph[0]
-                code = icmph[1]
-                checksum = icmph[2]
+            #now unpack them :)
+            udph = unpack('!HHHH' , udp_header)
 
-            #  print 'Type : ' + str(icmp_type) + ' Code : ' + str(code) + ' Checksum : ' + str(checksum)
-                h_size = eth_length + iph_length + icmph_length
-                data_size = len(packet) - h_size
+            source_port = udph[0]
+            dest_port = udph[1]
+            length = udph[2]
+            checksum = udph[3]
 
-                #get data from the packet
-                data = packet[h_size:]
+            #print('Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port))# + ' Length : ' + str(length)
+            h_size = eth_length + iph_length + udph_length
+            data_size = len(packet) - h_size
 
-
-            #UDP packets
-            elif protocol == 17 :
-                u = iph_length + eth_length
-                udph_length = 8
-                udp_header = packet[u:u+8]
-
-                #now unpack them :)
-                udph = unpack('!HHHH' , udp_header)
-
-                source_port = udph[0]
-                dest_port = udph[1]
-                length = udph[2]
-                checksum = udph[3]
-
-                #print('Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port))# + ' Length : ' + str(length)
-                h_size = eth_length + iph_length + udph_length
-                data_size = len(packet) - h_size
-
-                #get data from the packet
-                data = packet[h_size:]
-
-            #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'"')
-        #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'",'+'"'+eth_addr(packet[0:6])+'",'+'"'+eth_addr(packet[6:12])+'",' +'"' +str(eth_protocol)+'"')
-        
-except KeyboardInterrupt:
-    print("Bye")
-    exit(0)
+            #get data from the packet
+            data = packet[h_size:]
+    
+    print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'",'+'"'+eth_addr(packet[0:6])+'",'+'"'+eth_addr(packet[6:12])+'",' +'"' +str(eth_protocol)+'"')
+    
+    #print ('Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port)) 
+  

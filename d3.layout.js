@@ -1,10 +1,4 @@
-
-
 (function(){d3.layout = {}; 
-// Implements hierarchical edge bundling using Holten's algorithm. For each 
-// input link, a path is computed that travels through the tree, up the parent 
-// hierarchy to the least common ancestor, and then back down to the destination 
-// node. Each path is simply an array of nodes. 
 d3.layout.bundle = function() { 
   return function(links) { 
     var paths = [], 
