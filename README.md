@@ -14,20 +14,21 @@ git add
 git commit
 ```
 
-##### To gathered Information/ Sniffing Over the all Sniffing point 
-1.Just Run The Projecttool.c file
-  -DEMO-
-    -gcc <filetype.c> -lpcap
+**To gathered Information/ Sniffing Over the all Sniffing point**
 
-To Run The Python file
+1. Just Run The Projecttool.c file
+    - DEMO
+    - gcc <filetype.c> -lpcap
+    
+*To Run The Python file*
 1. python3 packsniff.py
 2. python3 bipartitegraph.py (If You Want the PNG image of Bipartite Graph otherwise don't run it.)
 
-Then With the json data Run The html file
+Then With the json data Run The **HTML** file -
 1. Simply click on the html file [it's Fully Automatic graph plotting keep refreshing the page according to your requirement    otherwise it will refresh the page after 20sec]
 
 N.B : According To your user data/ Network Traffic  set this to [1-infinte] (set here see this line at the packsniff.py code -> [if len(obj['links']) < 200]: and paste [any postive no at the place of 200]
 
 If You have any doubt and want to modify this just mail me..
 Thanks,
-Ringo..
+Ringo. :thumbsup:
