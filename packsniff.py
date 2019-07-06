@@ -2,6 +2,7 @@ import socket, sys
 from struct import *
 import time
 import json
+
 #Convert a string of 6 characters of ethernet address into a dash separated hex string
 def eth_addr (a) :
     b = "%.2x:%.2x:%.2x:%.2x:%.2x:%.2x" % (ord(a[0]) , ord(a[1]) , ord(a[2]), ord(a[3]), ord(a[4]) , ord(a[5]))
@@ -13,8 +14,6 @@ except socket.error:
     sys.exit()
 print('"Source",'+  '"Destination",'+ '"Protocol"')
 # receive a packet
-
-
 jsonFile = open('test.json','w')
 try:
     obj = {'links' : []}
@@ -31,7 +30,6 @@ try:
         eth_header = packet[:eth_length]
         eth = unpack('!6s6sH' , eth_header)
         eth_protocol = socket.ntohs(eth[2])
-    #print (eth_addr(packet[0:6]) +  eth_addr(packet[6:12]) + str(eth_protocol))
         
         #Parse IP packets, IP Protocol number = 8
         if eth_protocol == 8 :
@@ -62,7 +60,6 @@ try:
                     json.dump(obj, jsonFile, ensure_ascii=True, indent=2)
                     jsonFile.close()
 
-            #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'"') #+ 'Version : ' + str(version) + ' IP Header Length : ' + str(ihl) + ' TTL : ' + str(ttl) + ' Protocol : ' + str(protocol) +
             #TCP protocol
             if protocol == 6 :
                 t = iph_length + eth_length
@@ -99,13 +96,11 @@ try:
                 code = icmph[1]
                 checksum = icmph[2]
 
-            #  print 'Type : ' + str(icmp_type) + ' Code : ' + str(code) + ' Checksum : ' + str(checksum)
                 h_size = eth_length + iph_length + icmph_length
                 data_size = len(packet) - h_size
 
                 #get data from the packet
                 data = packet[h_size:]
-
 
             #UDP packets
             elif protocol == 17 :
@@ -121,7 +116,6 @@ try:
                 length = udph[2]
                 checksum = udph[3]
 
-                #print('Source Port : ' + str(source_port) + ' Dest Port : ' + str(dest_port))# + ' Length : ' + str(length)
                 h_size = eth_length + iph_length + udph_length
                 data_size = len(packet) - h_size
 
@@ -129,8 +123,7 @@ try:
                 data = packet[h_size:]
 
             print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'"')
-        #print('"'+str(s_addr)+'",'+'"'+str(d_addr)+'",'+'"'+str(protocol)+'",'+'"'+eth_addr(packet[0:6])+'",'+'"'+eth_addr(packet[6:12])+'",' +'"' +str(eth_protocol)+'"')
-        
+               
 except KeyboardInterrupt:
-    print("Bye")
+    print("Use Again")
     exit(0)
